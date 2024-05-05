@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Background Change Effect On Website</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+    <div class="container">
+
+
+        <div class="img-box">
+            <img src="./background_change_img/transparent.png" width="100%">
+
+            <div class="img-wrap">
+                <img src="./background_change_img/original.jpg" id="orginalImg">
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let imgBox = document.querySelector(".img-box")
+        let imgWrap = document.querySelector(".img-wrap")
+        let orginalImg = document.getElementById("orginalImg")
+        let leftSpace = imgBox.offsetLeft
+        orginalImg.style.width = imgBox.offsetWidth + "px"
+
+        imgBox.onmousemove = function (e) {
+            var boxWith = (e.pageX - leftSpace) + "px";
+            imgWrap.style.width = boxWith
+        }
+
+    </script>
+</body>
+
+</html>
