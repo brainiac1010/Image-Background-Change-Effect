@@ -21,17 +21,23 @@
             </div>
 
         </div>
+        <span id="line">
+            <img src="./background_change_img/arrow.png" class="arrow">
+        </span>
     </div>
     <script>
         let imgBox = document.querySelector(".img-box")
         let imgWrap = document.querySelector(".img-wrap")
-        let orginalImg = document.getElementById("orginalImg")
-        let leftSpace = imgBox.offsetLeft
-        orginalImg.style.width = imgBox.offsetWidth + "px"
 
+        let orginalImg = document.getElementById("orginalImg")
+
+        let line = document.getElementById("line")
+        orginalImg.style.width = imgBox.offsetWidth + "px"
+        let leftSpace = imgBox.offsetLeft
         imgBox.onmousemove = function (e) {
             var boxWith = (e.pageX - leftSpace) + "px";
-            imgWrap.style.width = boxWith
+            imgWrap.style.width = boxWith;
+            line.style.left = boxWith;
         }
 
     </script>
